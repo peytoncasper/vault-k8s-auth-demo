@@ -1,0 +1,20 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: basic-example
+  namespace: default
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: basic-example
+    spec:
+      serviceAccountName: default
+      containers:
+        - name: app
+          image: "vault-demo"
+          imagePullPolicy: Always
+          env:
+            - name: VAULT_ADDR
+              value: ""
