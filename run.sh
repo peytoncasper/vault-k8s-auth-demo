@@ -15,15 +15,7 @@ export VAULT_TOKEN=${VAULT_TOKEN:-INVALID}
 
 # Fetch secrets
 # Fetch a KV
-export KV=$(curl -H "X-Vault-Token: $VAULT_TOKEN" $VAULT_ADDR/v1/kv/test)
-
-# Example: Database creds
-#export DB=$(curl -H "X-Vault-Token: $VAULT_TOKEN" $VAULT_ADDR/v1/database/creds/test)
-
-# Exmaple: PKI cert
-#export CERT=$(curl -H "X-Vault-Token: $VAULT_TOKEN" --request POST \
-#                             --data '{ "common_name": "demo.openshift.domain.com"}' \
-#                              $VAULT_ADDR/v1/pki/issue/osrole)
+export KV=$(curl -H "X-Vault-Token: $VAULT_TOKEN" $VAULT_ADDR/v1/openshift/test)
 
 # Generate sample HTML page:
 cat > /usr/share/nginx/html/index.html <<EOF
