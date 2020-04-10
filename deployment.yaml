@@ -13,8 +13,8 @@ spec:
       serviceAccountName: default
       containers:
         - name: app
-          image: "vault-demo"
+          image: "gcr.io/testing-268014/vault-demo:1.0"
           imagePullPolicy: Always
           env:
             - name: VAULT_ADDR
-              value: ""
+              value: "http://104.198.30.62:8200"
